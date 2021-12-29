@@ -1,0 +1,12 @@
+.DS_Store
+._*
+
+*.pyc
+
+result*/
+results*/
+tmp/
+
+icnn
+
+.ipynb_checkpoints/
