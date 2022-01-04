@@ -16,16 +16,17 @@ Data and demo code for Ho, Horikawa, Majima, and Kamitani (2022), [Inter-individ
 Run the `ncc_training.py` to train the neural code converters for a pair of source and target subjects.
 
 ### DNN feature decoding from converted brain activities
-Run the  `ncc_predict_feat.py` to predict the DNN features from the converted brain activities with the trained neural code converters. Pre-trained DNN feature decoders of the target subjects are necessary to run this script. We used the same methodology in the previous study for DNN feature decoding ([Horikawa & Kamitani, 2017, Generic decoding of seen and imagined objects using hierarchical visual features, Nat Commun.](https://www.nature.com/articles/ncomms15037)). Python code for the DNN feature decoding is available at GitHub:KamitaniLab/dnn-feature-decoding.
+Run the  `ncc_predict_feat.py` to predict the DNN features from the converted brain activities with the trained neural code converters. Pre-trained DNN feature decoders of the target subjects are necessary to run this script. We used the same methodology in the previous study for DNN feature decoding ([Horikawa & Kamitani, 2017, Generic decoding of seen and imagined objects using hierarchical visual features, Nat Commun.](https://www.nature.com/articles/ncomms15037)). Python code for the DNN feature decoding is available at https://github.com/KamitaniLab/dnn-feature-decoding.
 
 ### Image reconstruction from decoded CNN features
 We used the same methodology in the previous study for image reconstruction ([Deep image reconstruction from human brain activity](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006633)). Please follow its instruction to setup the environment.
 
-Run the `image_reconstruction/recon_image_Deeprecon_VGG19_DGN_GD.py` to reconstruct the natural images shown in the original paper. Run the `image_reconstruction/recon_image_colorShape_VGG19_NoDGN_LBFGS.py` to reconstruct the artificial images shown in the original paper.
+Run the `image_reconstruction/recon_image_naturalImage_VGG19_DGN_GD.py` to reconstruct the natural images shown in the original paper. Run the `image_reconstruction/recon_image_artificialImage_VGG19_NoDGN_LBFGS.py` to reconstruct the artificial images shown in the original paper.
 
 ## Data
 Raw fMRI data: 
-Preprocessed fMRI data and decoded CNN features:
+https://openneuro.org/datasets/ds001506/versions/1.3.1
+https://openneuro.org/datasets/ds003430/versions/1.1.1
 
 ## References
 - Horikawa and Kamitani (2017) Generic decoding of seen and imagined objects using hierarchical visual features. Nature Communications 8:15037. https://www.nature.com/articles/ncomms15037
