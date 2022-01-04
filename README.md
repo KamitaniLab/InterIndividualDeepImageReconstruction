@@ -1,5 +1,5 @@
 # Inter-individual deep image reconstruction
-Data and demo code for Ho, Horikawa, Majima, and Kamitani (2022) [Inter-individual deep image reconstruction](). The preprint is availabe at bioRxiv (Ho et al., 2022, [Inter-individual deep image reconstruction]()).
+Data and demo code for Ho, Horikawa, Majima, and Kamitani (2022) [Inter-individual deep image reconstruction](https://www.biorxiv.org/content/10.1101/2021.12.31.474501v1). 
 
 ## Requirements
 - Python 2 or 3 (Python 2 is required for image reconstruction)
