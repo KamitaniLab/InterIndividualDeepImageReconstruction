@@ -25,7 +25,8 @@ Run the `image_reconstruction/recon_image_naturalImage_VGG19_DGN_GD.py` to recon
 Run the `image_reconstruction/recon_image_artificialImage_VGG19_NoDGN_LBFGS.py` to reconstruct the artificial images shown in the original paper.
 
 ## Data
-Raw fMRI data: 
+Raw fMRI data:   
+
 https://openneuro.org/datasets/ds001506/versions/1.3.1
 https://openneuro.org/datasets/ds003430/versions/1.1.1
 
