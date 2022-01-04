@@ -21,7 +21,8 @@ Run the  `ncc_predict_feat.py` to predict the DNN features from the converted br
 ### Image reconstruction from decoded CNN features
 We used the same methodology in the previous study for image reconstruction ([Deep image reconstruction from human brain activity](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006633)). Please follow its instruction to setup the environment.
 
-Run the `image_reconstruction/recon_image_naturalImage_VGG19_DGN_GD.py` to reconstruct the natural images shown in the original paper. Run the `image_reconstruction/recon_image_artificialImage_VGG19_NoDGN_LBFGS.py` to reconstruct the artificial images shown in the original paper.
+Run the `image_reconstruction/recon_image_naturalImage_VGG19_DGN_GD.py` to reconstruct the natural images shown in the original paper.  
+Run the `image_reconstruction/recon_image_artificialImage_VGG19_NoDGN_LBFGS.py` to reconstruct the artificial images shown in the original paper.
 
 ## Data
 Raw fMRI data: 
