@@ -1,0 +1,3 @@
+We used the same methodology in the previous study for DNN feature decoding ([Horikawa & Kamitani, 2017, Generic decoding of seen and imagined objects using hierarchical visual features, Nat Commun.](https://www.nature.com/articles/ncomms15037)). Python code for the DNN feature decoding is available at GitHub:KamitaniLab/dnn-feature-decoding.  
+
+Train the DNN feature decoder in this directory (or modify the `pre_results_dir_root` in `ncc_predict_feat.py` if necessary). 
