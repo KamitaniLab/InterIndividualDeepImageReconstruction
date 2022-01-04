@@ -1,5 +1,5 @@
 # Inter-individual deep image reconstruction
-Data and demo code for Ho, Horikawa, Majima, and Kamitani (2022), [Inter-individual deep image reconstruction](https://www.biorxiv.org/content/10.1101/2021.12.31.474501v1). 
+Demo code for Ho, Horikawa, Majima, and Kamitani (2022), [Inter-individual deep image reconstruction](https://www.biorxiv.org/content/10.1101/2021.12.31.474501v1). 
 
 ## Requirements
 - Python 2 or 3 (Python 2 is required for image reconstruction)
@@ -28,7 +28,6 @@ Run the `image_reconstruction/recon_image_artificialImage_VGG19_NoDGN_LBFGS.py` 
 Raw fMRI data:   
 
 https://openneuro.org/datasets/ds001506/versions/1.3.1  
-
 https://openneuro.org/datasets/ds003430/versions/1.1.1
 
 ## References
