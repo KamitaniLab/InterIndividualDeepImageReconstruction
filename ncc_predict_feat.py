@@ -27,11 +27,11 @@ def main():
     df_param = pd.read_csv(converter_param)
     # Brain data
     brain_dir = './data/fmri'
-    subjects_list = {'sub-01': 'sub-01_ImageNetTest_volume_native.h5',
-                     'sub-02': 'sub-02_ImageNetTest_volume_native.h5', 
-                     'sub-03': 'sub-03_ImageNetTest_volume_native.h5',
-                     'sub-04': 'sub-04_ImageNetTest_volume_native.h5',
-                     'sub-05': 'sub-05_ImageNetTest_volume_native.h5'}
+    subjects_list = {'sub-01': 'sub-01_NaturalImageTest.h5',
+                     'sub-02': 'sub-02_NaturalImageTest.h5', 
+                     'sub-03': 'sub-03_NaturalImageTest.h5',
+                     'sub-04': 'sub-04_NaturalImageTest.h5',
+                     'sub-05': 'sub-05_NaturalImageTest.h5'}
 
     label_name = 'image_index'
 

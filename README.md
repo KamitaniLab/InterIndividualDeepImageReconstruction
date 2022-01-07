@@ -32,5 +32,6 @@ https://openneuro.org/datasets/ds003430/versions/1.1.1
 
 ## References
 - Yamada K, Miyawaki Y, Kamitani Y. Inter-subject neural code converter for visual image representation. NeuroImage. 2015; 113: 289–297. https://doi.org/10.1016/j.neuroimage.2015.03.059 
+- Haxby JV, Guntupalli JS, Connolly AC, Halchenko YO, Conroy BR, Gobbini MI, et al. A Common, High-Dimensional Model of the Representational Space in Human Ventral Temporal Cortex. Neuron. 2011; 72: 404–416. https://doi.org/10.1016/j.neuron.2011.08.026 
 - Horikawa and Kamitani (2017) Generic decoding of seen and imagined objects using hierarchical visual features. Nature Communications 8:15037. https://www.nature.com/articles/ncomms15037
 - Shen, Horikawa, Majima, and Kamitani (2019) Deep image reconstruction from human brain activity. PLOS Computational Biology. https://doi.org/10.1371/journal.pcbi.1006633

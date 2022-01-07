@@ -31,11 +31,11 @@ def main():
     # converter_param = './params/converter_params.csv'
     df_param = pd.read_csv(converter_param)
     brain_dir = './data/fmri'
-    subjects_list = {'sub-01': 'sub-01_ImageNetTraining_volume_native.h5',
-                     'sub-02': 'sub-02_ImageNetTraining_volume_native.h5', 
-                     'sub-03': 'sub-03_ImageNetTraining_volume_native.h5',
-                     'sub-04': 'sub-04_ImageNetTraining_volume_native.h5',
-                     'sub-05': 'sub-05_ImageNetTraining_volume_native.h5'}
+    subjects_list = {'sub-01': 'sub-01_NaturalImageTraining.h5',
+                     'sub-02': 'sub-02_NaturalImageTraining.h5', 
+                     'sub-03': 'sub-03_NaturalImageTraining.h5',
+                     'sub-04': 'sub-04_NaturalImageTraining.h5',
+                     'sub-05': 'sub-05_NaturalImageTraining.h5'}
 
     data_brain = {subject: bdpy.BData(os.path.join(brain_dir, dat_file))
                 for subject, dat_file in subjects_list.items()}
