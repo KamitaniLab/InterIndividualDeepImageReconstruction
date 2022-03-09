@@ -25,7 +25,11 @@ Run the `image_reconstruction/recon_image_naturalImage_VGG19_DGN_GD.py` to recon
 Run the `image_reconstruction/recon_image_artificialImage_VGG19_NoDGN_LBFGS.py` to reconstruct the artificial images shown in the original paper.
 
 ## Data
-Raw fMRI data:   
+The data in h5 format could be downloaded from:  
+
+https://figshare.com/articles/dataset/Inter-individual_deep_image_reconstruction/17985578
+
+The Raw fMRI data could be downloaded from:   
 
 https://openneuro.org/datasets/ds001506/versions/1.3.1  
 https://openneuro.org/datasets/ds003430/versions/1.1.1  
