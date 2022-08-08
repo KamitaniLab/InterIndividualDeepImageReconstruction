@@ -41,3 +41,4 @@ https://openneuro.org/datasets/ds003993
 - Haxby JV, Guntupalli JS, Connolly AC, Halchenko YO, Conroy BR, Gobbini MI, et al. A Common, High-Dimensional Model of the Representational Space in Human Ventral Temporal Cortex. Neuron. 2011; 72: 404–416. https://doi.org/10.1016/j.neuron.2011.08.026 
 - Horikawa and Kamitani (2017) Generic decoding of seen and imagined objects using hierarchical visual features. Nature Communications 8:15037. https://www.nature.com/articles/ncomms15037
 - Shen, Horikawa, Majima, and Kamitani (2019) Deep image reconstruction from human brain activity. PLOS Computational Biology. https://doi.org/10.1371/journal.pcbi.1006633
+- Bazeille T, Richard H, Janati H, Thirion B. Local Optimal Transport for Functional Brain Template Estimation. Information Processing in Medical Imaging; June 2019; Hong Kong.  Springer, Cham; vol 11492. doi: https://doi.org/10.1007/978-3-030-20351-1_18
