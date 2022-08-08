@@ -1,4 +1,8 @@
-from __future__ import print_function
+'''
+Script for training the template-based pairwise alignment via hyperalignment.
+Even though the left and right hemisphere (and also, eash brain area) are trained separately, 
+the matrices for each brain area are aggregated to a matrix for the whole VC.
+'''
 
 import os
 import warnings
@@ -20,7 +24,7 @@ from fastl2lir import FastL2LiR
 import json
 import pandas as pd
 
-from pyhyperalignment_revise import Hyperalignment
+from pyhyperalignment import Hyperalignment
 
 # Main #######################################################################
 

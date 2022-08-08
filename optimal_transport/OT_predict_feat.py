@@ -1,7 +1,4 @@
-'''Feature prediction: prediction (test) script'''
-
-
-from __future__ import print_function
+'''Feature prediction with optimal transport: prediction (test) script'''
 
 import glob
 import os

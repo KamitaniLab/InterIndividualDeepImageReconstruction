@@ -1,7 +1,5 @@
-'''Feature prediction: prediction (test) script'''
+'''Feature prediction with Procrustes transformation: prediction (test) script'''
 
-
-from __future__ import print_function
 
 import glob
 import os

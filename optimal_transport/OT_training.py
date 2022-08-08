@@ -1,4 +1,11 @@
-from __future__ import print_function
+'''
+Script for training the optimal transport.
+Even though the left and right hemisphere (and also, eash brain area) are trained separately, 
+the matrices for each brain area are aggregated to a matrix for the whole VC.
+
+Note that GPU is necessary for the computation of the optimal transport.
+fmrialign use jax-ott which has to be installed together with fmrialign.
+'''
 
 import os
 import warnings
