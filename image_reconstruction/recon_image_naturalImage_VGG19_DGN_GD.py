@@ -41,7 +41,7 @@ converter_param = './params/converter_params_1conversion.csv'
 df_param = pd.read_csv(converter_param)
 
 # Decoded features settings
-decoded_features_result_dir = '../feat_results/ncc_predict_feat'
+decoded_features_result_dir = '../ridge_ncc/feat_results/ncc_predict_feat'
 decoded_features_dir = os.path.join(decoded_features_result_dir, 'decoded_features')
 
 def decode_feature_filename(decoded_features_dir, net, layer, conversion, roi, method, num_samples, alpha, image_label):

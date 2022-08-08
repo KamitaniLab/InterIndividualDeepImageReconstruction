@@ -30,7 +30,7 @@ def main():
     # To train converter for all subject pairs and with varying training samples, uncommented the line below.
     # converter_param = './params/converter_params.csv'
     df_param = pd.read_csv(converter_param)
-    brain_dir = './data/fmri'
+    brain_dir = '../data/fmri'
     subjects_list = {'sub-01': 'sub-01_NaturalImageTraining.h5',
                      'sub-02': 'sub-02_NaturalImageTraining.h5', 
                      'sub-03': 'sub-03_NaturalImageTraining.h5',
@@ -82,7 +82,7 @@ def main():
         makedir_ifnot(tmp_dir)
 
         # Check whether the analysis has been done or not.
-        result_model = os.path.join(results_dir, 'NCconverter.mat')
+        result_model = os.path.join(results_dir, 'transformation.mat')
         if os.path.exists(result_model):
             print('%s already exists and skipped' % result_model)
             continue
@@ -237,7 +237,7 @@ def train_NCconverter(x, y, x_labels, y_labels, embedded_idxs_src, embedded_idxs
         M[-1, idxs_sub_trg] += b
 
     # Save chunk results
-    result_model = os.path.join(output, 'NCconverter.mat')
+    result_model = os.path.join(output, 'transformation.mat')
     save_array(result_model, M, 'M', dtype=np.float32, sparse=False) 
     print('Saved %s' % result_model)
 

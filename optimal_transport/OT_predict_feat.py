@@ -1,4 +1,7 @@
-'''Feature prediction with neural code conversion: prediction (test) script'''
+'''Feature prediction: prediction (test) script'''
+
+
+from __future__ import print_function
 
 import glob
 import os
@@ -12,6 +15,7 @@ import hdf5storage
 import bdpy
 from bdpy.util import makedir_ifnot, get_refdata
 from bdpy.distcomp import DistComp
+
 from bdpy.dataform import Features, load_array, save_array
 
 from fastl2lir import FastL2LiR
@@ -20,13 +24,13 @@ import pandas as pd
 # Main #######################################################################
 
 def main():
-    # Read settings ----------------------------------------------------
-    converter_param = './params/converter_params_1conversion.csv'
+     # Read settings ----------------------------------------------------
+    converter_param = './params/converter_params.csv'
     # To use converter for all subject pairs and with varying training samples, uncommented the line below.
     # converter_param = './params/converter_params.csv'
     df_param = pd.read_csv(converter_param)
     # Brain data
-    brain_dir = './data/fmri'
+    brain_dir = '../data/fmri'
     subjects_list = {'sub-01': 'sub-01_NaturalImageTest.h5',
                      'sub-02': 'sub-02_NaturalImageTest.h5', 
                      'sub-03': 'sub-03_NaturalImageTest.h5',
@@ -49,17 +53,17 @@ def main():
                      'fc6', 'fc7', 'fc8'][::-1]
 
 
-    # Training results directory
+    # results directory
     results_dir_root = './feat_results'
 
     # Converter models
-    nc_models_dir_root = os.path.join('./NCconverter_results', 'ncc_training')
+    nc_models_dir_root = os.path.join('./OT_results', 'OT_training')
 
     # Misc settings
     analysis_basename = os.path.splitext(os.path.basename(__file__))[0]
 
     # Pretrained model: modify if models are placed in other directory.
-    pre_results_dir_root = './pretrained_models'
+    pre_results_dir_root = '../pretrained_models'
     pre_analysis_basename = 'featdec_deeprecon_500voxel_vgg19_allunits_fastl2lir_alpha100_predict'
     pre_models_dir_root =os.path.join(pre_results_dir_root, pre_analysis_basename)
 
@@ -87,7 +91,7 @@ def main():
         trg = str(row['Target'])
         roi = str(row['ROI'])
         method = str(row['Method'])
-        alpha = int(row['Alpha'])
+        alpha = row['Alpha']
         num_samples = int(row['Number of samples'])
         print('--------------------')
         print('Source: %s' % src)
@@ -104,7 +108,7 @@ def main():
             # Distributed computation setup
             # -----------------------------
             conversion = src+'2'+trg
-            analysis_id = analysis_basename + '-' + conversion + '-' + roi + '-' + method +'-' + str(num_samples) + '-' + str(alpha) + '-' + feat
+            analysis_id = analysis_basename + '-' + conversion + '-' + roi + '-' + method +'-' + str(num_samples) + '-' + str(alpha) + '-' + feat + str(shape)
             results_dir_prediction = os.path.join(results_dir_root, analysis_basename, 'decoded_features', network, feat, conversion, roi, method, 
                                        str(num_samples), str(alpha))
             results_dir_accuracy = os.path.join(results_dir_root, analysis_basename, 'prediction_accuracy', network, feat, conversion, roi, method, 
@@ -139,6 +143,9 @@ def main():
             # Get test data
             x_test = x
             x_test_labels = x_labels
+
+            y_test = y
+            y_test_labels = y_labels
 
             # Averaging brain data
             x_test_labels_unique = np.unique(x_test_labels)
@@ -177,6 +184,7 @@ def main():
             accuracy = accuracy.reshape((1,) + y_pred.shape[1:])
 
             print('Mean prediction accuracy: {}'.format(np.nanmean(accuracy)))
+
             print('Total elapsed time (prediction accuracy): %f' % (time() - start_time))
 
             # Save results
@@ -193,10 +201,10 @@ def main():
                 # Predicted features
                 feat = np.array([y_pred[i,]])  # To make feat shape 1 x M x N x ...
 
-                #image_filename = image_names[int(lb) - 1]  # Image labels are one-based image indexes
+                image_filename = image_names[int(lb) - 1]  # Image labels are one-based image indexes
 
                 # Save file name
-                save_file = os.path.join(results_dir_prediction, 'Img%04d.mat' % i)
+                save_file = os.path.join(results_dir_prediction, '%s.mat' % image_filename)
 
                 # Save
                 save_array(save_file, feat, 'feat', dtype=np.float32, sparse=False) 
@@ -219,7 +227,7 @@ def main():
 def test_ncconverter(model_store, x):
     # Load NC converter
     print('Load NC converter')
-    NCconverter = hdf5storage.loadmat(os.path.join(model_store, 'NCconverter.mat'))
+    NCconverter = hdf5storage.loadmat(os.path.join(model_store, 'transformation.mat'))
     M = NCconverter['M']
 
     x_mean = hdf5storage.loadmat(os.path.join(model_store, 'x_mean.mat'))['x_mean']  # shape = (1, n_voxels)
@@ -234,8 +242,10 @@ def test_ncconverter(model_store, x):
     converted_x = np.matmul(x, M)
 
     converted_x = converted_x * y_norm + y_mean
-
+    
     return converted_x
+
+
 
 def test_fastl2lir_div(model_store, x, chunk_axis=1):
     # W: shape = (n_voxels, shape_features)
@@ -258,6 +268,7 @@ def test_fastl2lir_div(model_store, x, chunk_axis=1):
     x_norm = hdf5storage.loadmat(os.path.join(model_store, 'x_norm.mat'))['x_norm']  # shape = (1, n_voxels)
     y_mean = hdf5storage.loadmat(os.path.join(model_store, 'y_mean.mat'))['y_mean']  # shape = (1, shape_features)
     y_norm = hdf5storage.loadmat(os.path.join(model_store, 'y_norm.mat'))['y_norm']  # shape = (1, shape_features)
+
 
     x = (x - x_mean) / x_norm
 

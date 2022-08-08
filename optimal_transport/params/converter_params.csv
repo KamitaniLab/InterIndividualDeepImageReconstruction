@@ -1,0 +1,21 @@
+Source,Target,Number of samples,Alpha,ROI,Method
+sub-01,sub-02,2400,0.1,VC,full
+sub-02,sub-01,2400,0.1,VC,full
+sub-01,sub-03,2400,0.1,VC,full
+sub-03,sub-01,2400,0.1,VC,full
+sub-01,sub-04,2400,0.1,VC,full
+sub-04,sub-01,2400,0.1,VC,full
+sub-01,sub-05,2400,0.1,VC,full
+sub-05,sub-01,2400,0.1,VC,full
+sub-02,sub-03,2400,0.1,VC,full
+sub-03,sub-02,2400,0.1,VC,full
+sub-02,sub-04,2400,0.1,VC,full
+sub-04,sub-02,2400,0.1,VC,full
+sub-02,sub-05,2400,0.1,VC,full
+sub-05,sub-02,2400,0.1,VC,full
+sub-03,sub-04,2400,0.1,VC,full
+sub-04,sub-03,2400,0.1,VC,full
+sub-03,sub-05,2400,0.05,VC,full
+sub-05,sub-03,2400,0.05,VC,full
+sub-04,sub-05,2400,0.05,VC,full
+sub-05,sub-04,2400,0.05,VC,full
