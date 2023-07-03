@@ -17,7 +17,7 @@ Demo code for Ho, Horikawa, Majima, and Kamitani (2022), [Inter-individual deep 
 Run the `ridge_ncc/ncc_training.py` to train the neural code converters for a pair of source and target subjects.
 
 ### DNN feature decoding from converted brain activities
-Run the  `ridge_ncc/ncc_predict_feat.py` to predict the DNN features from the converted brain activities with the trained neural code converters. Pre-trained DNN feature decoders of the target subjects are necessary to run this script. We used the same methodology in the previous study for DNN feature decoding ([Horikawa & Kamitani, 2017, Generic decoding of seen and imagined objects using hierarchical visual features, Nat Commun.](https://www.nature.com/articles/ncomms15037)). Python code for the DNN feature decoding is available at https://github.com/KamitaniLab/dnn-feature-decoding.
+Run the  `ridge_ncc/ncc_predict_feat.py` to predict the DNN features from the converted brain activities with the trained neural code converters. Pre-trained DNN feature decoders of the target subjects are necessary to run this script. We used the same methodology in the previous study for DNN feature decoding ([Horikawa & Kamitani, 2017, Generic decoding of seen and imagined objects using hierarchical visual features, Nat Commun.](https://www.nature.com/articles/ncomms15037)). Python code for the DNN feature decoding is available at https://github.com/KamitaniLab/brain-decoding-cookbook-public.
 
 ### Image reconstruction from decoded CNN features
 We used the same methodology in the previous study for image reconstruction ([Deep image reconstruction from human brain activity](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006633)). Please follow its instruction to setup the environment.
